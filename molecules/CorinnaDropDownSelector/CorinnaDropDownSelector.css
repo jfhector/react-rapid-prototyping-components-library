@@ -1,0 +1,102 @@
+.CorinnaDropDownSelector {
+    position: relative;
+    display: grid;
+    grid-template-areas: "titleArea     caretArea";
+}
+
+.title {
+    grid-area: titleArea;
+    align-self: baseline;
+    font-size: x-large;
+    font-weight: 400;
+    cursor: pointer;
+    color: var(--backgroundColor_button_primary);
+}
+
+.caret {
+    grid-area: caretArea;
+    align-self: center;
+    padding-top: 3px;
+    padding-left: 5px;
+    cursor: pointer;
+}
+
+.optionSelectorContainer {
+    visibility: hidden;
+    z-index: 5;
+    position: absolute;
+    top: 40px;
+    left: -20px;
+    background-color: #fff;
+    border-radius: 5px;
+    border: 1px solid var(--borderColor_aroundWhiteOrLightestGrey);
+    width: -moz-max-content;
+    width: -webkit-max-content;
+    width: max-content;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: x-large;
+    min-height: 100px;
+    box-shadow: 0 2px 4px var(--shadowColor_default);
+}
+
+.optionSelectorContainer .selectorPointyTop {
+    background-color: #fff;
+    border: 1px solid var(--borderColor_aroundWhiteOrLightestGrey);
+    border-right-color: white;
+    border-bottom-color: white;
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    top: -8px;
+    left: 20px;
+    transform: rotateZ(45deg);
+}
+
+.optionSelectorContainer .selectableOptionName {
+    line-height: 1.5;
+    padding-left: 20px;
+    padding-right: 20px;
+    color: var(--textColor_links_active);
+    cursor: pointer;
+}
+
+.optionSelectorContainer .nested1LevelOptionName {
+    line-height: 1.5;
+    padding-left: 40px;
+}
+
+.optionSelectorContainer .nested2LevelsOptionName {
+    line-height: 1.5;
+    padding-left: 60px;
+}
+
+.selectableOptionName:hover {
+    background-color: #007bff11;
+}
+
+.backdropToCatchClicksAwayFromSelector {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #0006;
+    position: fixed;
+    z-index: 4;
+}
+
+/* optionsVisible BOOL PROP */
+
+.optionsVisible .optionSelectorContainer {
+    visibility: visible;
+}
+
+/* bold BOOL PROP */
+
+.bold .title {
+    font-weight: 700;
+}
+
+.bold .selectableOptionName {
+    font-weight: 700;
+}
